@@ -2,6 +2,7 @@
 name = "example-project"
 version = "1.0.0"
 sbom-files = [
-    # Files and conditional SBOM files supported with markers
-    {sbom-file = "conditional.cdx.json", markers = "platform_system = 'Windows'"},
+    # Files and conditional SBOM files supported with tags
+    {sbom-file = "conditional.cdx.json", platform = "win*"},
+    {sbom-file = "conditional.cdx.json", python = "py2"},
 ]

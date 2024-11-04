@@ -1,5 +1,12 @@
 # Software Bill-of-Materials for Python distributions
 
+* [Terminology](#terminology)
+* [Motivation](#motivation)
+* [Rationale](#rationale)
+* [Proposal](#proposal)
+* [How does it all fit together?](#how-does-it-all-fit-together)
+* [License](#license)
+
 ## Terminology
 
 This repository uses terminology consistent with the [Python Packaging User Guide Glossary](https://packaging.python.org/en/latest/glossary/).
@@ -95,7 +102,31 @@ to the above two subprojects and then updated later once the above PEP is accept
 * Create an informational PEP on how to transform Python distribution metadata and included SBOM documents into one SBOM document
   for an installed Python distribution.
 * Create a list of example projects and "golden" SBOMs against complex Python distributions (pip, numpy, pandas, pydantic, etc)
-* Test these examples against SBOM generation tools for conformance.
+
+These examples can then be used by SBOM tool developers to verify their software is working
+for Python packages.
+
+## How does it all fit together?
+
+* If project dependencies are checked into version control then an SBOM file
+  can be created and checked into version control alongside those dependencies.
+  This SBOM file is referenced within `pyproject.toml` under `project.sbom-files`.
+* If the bundled dependency is conditional (for example, "Windows only"), then `markers` will be applied to the `sbom-files` entry.
+* The Python package build backend (ie `setuptools`) processes the `sbom-files` field and adds
+  corresponding `Sbom-File` Python package metadata for every SBOM file that is referenced and matches with markers.
+* Build backends might also generate their own SBOM documents to include in Python packages. For example
+  Maturin does Rust dependency management so could generate an SBOM document for all Rust dependencies
+  to include in the Python package.
+* After Python wheels are generated, wheels can be further augmented or patched with
+  shared and dynamic libraries by bundling (ie `auditwheel`). Tools that augment an existing wheels
+  should generate their own SBOM document that details the shared libraries that were bundled
+  if that information is available. For example, cibuildwheel for manylinux commonly uses AlmaLinux's packaging system.
+* Python packages are uploaded to PyPI. PyPI does some quality checks for whether SBOM files exist
+  and aren't invalid.
+* Python packages are installed from PyPI. When installed, the SBOM files are stored in `.dist-info/sboms/...`
+  directory in the environment.
+* SBOM tools generating an SBOM for a Python package or environment with a list of installed Python packages
+  can inspect these SBOM files and use them when generating an SBOM for a package or environment.
 
 ## License
 
