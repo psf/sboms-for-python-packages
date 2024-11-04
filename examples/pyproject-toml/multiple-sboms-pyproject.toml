@@ -1,0 +1,12 @@
+[project]
+name = "example-project"
+version = "1.0.0"
+sbom-files = [
+    # Multiple files
+    "sbom1.cdx.json",
+    "sbom2.cdx.json",
+    # Directories
+    "dir/sbom3.cdx.json",
+    # Supports simple globs (without . and ..)
+    "dir/**/glob*/sbom.cdx.json",
+]

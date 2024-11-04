@@ -77,6 +77,8 @@ This subproject will require the above subproject to be complete to be "ready fo
 but is not blocked on starting the draft PEP and discussion process.
 
 * New core metadata field: `Sbom-File` for specifying the location(s) of one or more SBOM files in a distribution. New package metadata version for the new field.
+* pyproject.toml field `sbom-files` added to `[project]` table for conditional and unconditional inclusion of SBOM documents in Python packages.
+  Conditional SBOM files use markers.
 * New directory for containing SBOM files (`/.dist-info/sboms/`) in Python distributions and installed locations.
   This directory will be similar to the [`/.dist-info/licenses/` directory specified in PEP 639](https://peps.python.org/pep-0639/#license-files-in-project-formats).
 * How to self-reference software within a Python distribution as an SBOM component.
