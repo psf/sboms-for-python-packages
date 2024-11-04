@@ -1,4 +1,4 @@
-# Software Bill-of-Materials for Python distributions
+# Software Bill-of-Materials for Python packages
 
 * [Terminology](#terminology)
 * [Motivation](#motivation)
@@ -15,6 +15,8 @@ please be aware of these differences when reading and contributing.
 
 ## Motivation
 
+### Regulations
+
 Software Bill-of-Materials documents (SBOMs) are a technology and ecosystem-agnostic
 format for describing software composition, provenance, and other metadata. SBOMs
 are required by recent software security regulations, like the [Secure Software Development Framework](https://csrc.nist.gov/Projects/ssdf) (SSDF)
@@ -23,8 +25,16 @@ Due to their inclusion in these regulations, the demand for SBOM documents of op
 For example, the Tennessee Valley Authority has already begun attempting to collect SBOM documents
 from open source projects like CPython.
 
-Python distributions are particularly affected by the "[phantom dependency](https://www.endorlabs.com/learn/dependency-resolution-in-python-beware-the-phantom-dependency)" problem,
-where software that isn't written in Python are included in Python distributions
+The goal is to minimize the demands on open source project maintainers by enabling
+open source users that need SBOMs to self-serve using existing tooling. Another goal
+is to enable contributions to create or annotate projects with SBOM information from those
+same users that need SBOM documents from projects. Today there is no mechanism to propagate
+the results of those contributions into SBOM tooling so there is no reason to contribute this type of work.
+
+### Phantom dependencies
+
+Python packages are particularly affected by the "[phantom dependency](https://www.endorlabs.com/learn/dependency-resolution-in-python-beware-the-phantom-dependency)" problem,
+where software that isn't written in Python are included in Python packages
 for many reasons, such as ease of installation and compatibility with standards:
 
 * Python serves scientific, data, and machine-learning use-cases which use compiled or non-Python languages like Rust, C, C++, Fortran, JavaScript, and others.
@@ -40,21 +50,60 @@ vulnerable software components aren't reported accurately.
 Attempting to adopt every field offered by SBOM standards into Python core metadata would result in an explosion of
 new core metadata fields including needing to keep up-to-date as
 SBOM standards continue to evolve to suit new needs in that space.
+Instead, this proposal delegates metadata to SBOM documents and formats
+and adds Python package metadata for linking to SBOM documents contained within a Python package.
 
 This standard also doesn't aim to replace Python core metadata with SBOMs, instead
 focusing on the SBOM information being supplemental to core metadata.
 Core metadata fields MUST be used as the authoritative location for information
-about a Python distribution itself and included SBOMs MUST only contain information
-about dependencies included in the distribution archive OR information
-about the software in the distribution that can't be encoded into core metadata
+about a Python package itself and included SBOMs MUST only contain information
+about dependencies included in the package archive OR information
+about the software in the package that can't be encoded into core metadata
 but is relevant for the SBOM use-case (such as, "software identifier", "purpose", "support level", etc).
 
 ## Proposal
 
 Today there is no method to encode information for cross-language/ecosystem software
-dependencies into Python distribution metadata. This project proposes using SBOM formats
-for this purpose and allowing SBOM documents to be included in Python distributions archives
-to self-describe software within those distribution archives.
+dependencies into Python package metadata. This project proposes using SBOM formats
+for this purpose and allowing SBOM documents to be included in Python packages archives
+to self-describe software within those package archives. Included SBOM documents are then
+referenced using a new Python metadata field `Sbom-File` so they are discoverable within a Python package.
+
+For example, a Python wheel for numpy containing an SBOM document:
+
+```
+numpy-2.1.3.dist-info/sboms/bundled.cdx.json
+```
+
+...where that SBOM file contains information about software like `lapack-lite` which the numpy team bundles themselves
+and `libgfortran` which was "repaired" into the wheel by `auditwheel`:
+
+```json5
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "metadata": {
+    // Primary component is numpy
+    "component": {
+      "type": "library",
+      "name": "numpy",
+      "version": "2.1.3"
+    }
+  },
+  // Sub-components described here:
+  "components": [
+    {
+      "name": "lapack-lite",
+      // ...
+    },
+    {
+      "name": "libgfortran",
+      "purl": "pkg:rpm/almalinux/libgfortran@8.5.0-22"
+    }
+    // ...
+  ]
+}
+```
 
 The proposal would require:
 
@@ -83,12 +132,12 @@ Some of this survey will come in the form of a pre-PEP and PEP discussion of the
 This subproject will require the above subproject to be complete to be "ready for submission" to be reviewed and approved,
 but is not blocked on starting the draft PEP and discussion process.
 
-* New core metadata field: `Sbom-File` for specifying the location(s) of one or more SBOM files in a distribution. New package metadata version for the new field.
+* New core metadata field: `Sbom-File` for specifying the location(s) of one or more SBOM files in a package. New package metadata version for the new field.
 * pyproject.toml field `sbom-files` added to `[project]` table for conditional and unconditional inclusion of SBOM documents in Python packages.
   Conditional SBOM files use markers.
-* New directory for containing SBOM files (`/.dist-info/sboms/`) in Python distributions and installed locations.
+* New directory for containing SBOM files (`/.dist-info/sboms/`) in Python packages and installed locations.
   This directory will be similar to the [`/.dist-info/licenses/` directory specified in PEP 639](https://peps.python.org/pep-0639/#license-files-in-project-formats).
-* How to self-reference software within a Python distribution as an SBOM component.
+* How to self-reference software within a Python package as an SBOM component.
 * Provide all examples using common SBOM standards like CycloneDX and SPDX. Provide no preference to either standard.
 * Set of filtering requirements to add to popular package indexes like PyPI to ensure other tools are adhering to standards.
 * Adoption by two build backends/tools and PyPI.
@@ -99,9 +148,9 @@ This subproject aims to provide high-quality calibration materials
 for SBOM tool developers. This subproject can be worked on concurrently
 to the above two subprojects and then updated later once the above PEP is accepted.
 
-* Create an informational PEP on how to transform Python distribution metadata and included SBOM documents into one SBOM document
-  for an installed Python distribution.
-* Create a list of example projects and "golden" SBOMs against complex Python distributions (pip, numpy, pandas, pydantic, etc)
+* Create an informational PEP on how to transform Python package metadata and included SBOM documents into one SBOM document
+  for an installed Python package.
+* Create a list of example projects and "golden" SBOMs against complex Python packages (pip, numpy, pandas, pydantic, etc)
 
 These examples can then be used by SBOM tool developers to verify their software is working
 for Python packages.
