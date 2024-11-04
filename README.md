@@ -1,5 +1,8 @@
 # Software Bill-of-Materials for Python packages
 
+> **NOTE:**
+> This project is a work-in-progress and is soliciting feedback from experts in the respective areas. Please open questions as [new GitHub issues](https://github.com/sethmlarson/sboms-for-python-packages/issues). Thank you for your feedback!
+
 * [Terminology](#terminology)
 * [Motivation](#motivation)
 * [Rationale](#rationale)
