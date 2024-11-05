@@ -1,3 +1,10 @@
+# Benchmarks
+benchmark/node_modules
+benchmark/package-lock.json
+benchmark/package.json
+benchmark/syft
+benchmark/trivy
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
