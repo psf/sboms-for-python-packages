@@ -1,0 +1,5 @@
+--only-binary=":all:"
+
+cryptography
+numpy
+pip
