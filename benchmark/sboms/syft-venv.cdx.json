@@ -769,11 +769,11 @@
   ],
   "metadata": {
     "component": {
-      "bom-ref": "be1b494c6e6024b3",
-      "name": "./venv",
+      "bom-ref": "b498877f6174de3c",
+      "name": "/venv",
       "type": "file"
     },
-    "timestamp": "2024-11-05T14:29:08-06:00",
+    "timestamp": "2024-11-08T09:54:22-06:00",
     "tools": [
       {
         "name": "syft",
@@ -782,7 +782,7 @@
       }
     ]
   },
-  "serialNumber": "urn:uuid:769feb39-045f-4175-9354-e4e5dcbb43a6",
+  "serialNumber": "urn:uuid:7e1f3f31-d681-4cd9-a038-f97ae3af12e9",
   "specVersion": "1.4",
   "version": 1
 }

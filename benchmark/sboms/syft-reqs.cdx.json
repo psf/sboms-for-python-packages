@@ -1,0 +1,419 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.4.schema.json",
+  "bomFormat": "CycloneDX",
+  "components": [
+    {
+      "bom-ref": "pkg:pypi/cffi@1.17.1?package-id=1f5a488ecf07745f",
+      "cpe": "cpe:2.3:a:python-cffi:python-cffi:1.17.1:*:*:*:*:*:*:*",
+      "name": "cffi",
+      "properties": [
+        {
+          "name": "syft:package:foundBy",
+          "value": "python-index-cataloger"
+        },
+        {
+          "name": "syft:package:language",
+          "value": "python"
+        },
+        {
+          "name": "syft:package:metadataType",
+          "value": "PythonRequirementsMetadata"
+        },
+        {
+          "name": "syft:package:type",
+          "value": "python"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python-cffi:python_cffi:1.17.1:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python_cffi:python-cffi:1.17.1:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python_cffi:python_cffi:1.17.1:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python:python-cffi:1.17.1:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python:python_cffi:1.17.1:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:cffi:python-cffi:1.17.1:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:cffi:python_cffi:1.17.1:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python-cffi:cffi:1.17.1:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python_cffi:cffi:1.17.1:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python:cffi:1.17.1:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:cffi:cffi:1.17.1:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:location:0:path",
+          "value": "/requirements.txt"
+        }
+      ],
+      "purl": "pkg:pypi/cffi@1.17.1",
+      "type": "library",
+      "version": "1.17.1"
+    },
+    {
+      "bom-ref": "pkg:pypi/cryptography@43.0.3?package-id=e6fc67dfc3a0c6a4",
+      "cpe": "cpe:2.3:a:python-cryptography_project:python-cryptography:43.0.3:*:*:*:*:*:*:*",
+      "name": "cryptography",
+      "properties": [
+        {
+          "name": "syft:package:foundBy",
+          "value": "python-index-cataloger"
+        },
+        {
+          "name": "syft:package:language",
+          "value": "python"
+        },
+        {
+          "name": "syft:package:metadataType",
+          "value": "PythonRequirementsMetadata"
+        },
+        {
+          "name": "syft:package:type",
+          "value": "python"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python-cryptography_project:python_cryptography:43.0.3:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python-cryptography_project:cryptography:43.0.3:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python-cryptography:python-cryptography:43.0.3:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python-cryptography:python_cryptography:43.0.3:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python_cryptography:python-cryptography:43.0.3:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python_cryptography:python_cryptography:43.0.3:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:cryptography:python-cryptography:43.0.3:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:cryptography:python_cryptography:43.0.3:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python-cryptography:cryptography:43.0.3:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python_cryptography:cryptography:43.0.3:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python:python-cryptography:43.0.3:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python:python_cryptography:43.0.3:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:cryptography:cryptography:43.0.3:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python:cryptography:43.0.3:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:location:0:path",
+          "value": "/requirements.txt"
+        }
+      ],
+      "purl": "pkg:pypi/cryptography@43.0.3",
+      "type": "library",
+      "version": "43.0.3"
+    },
+    {
+      "bom-ref": "pkg:pypi/numpy@2.1.3?package-id=becc1b18c2dab864",
+      "cpe": "cpe:2.3:a:python-numpy:python-numpy:2.1.3:*:*:*:*:*:*:*",
+      "name": "numpy",
+      "properties": [
+        {
+          "name": "syft:package:foundBy",
+          "value": "python-index-cataloger"
+        },
+        {
+          "name": "syft:package:language",
+          "value": "python"
+        },
+        {
+          "name": "syft:package:metadataType",
+          "value": "PythonRequirementsMetadata"
+        },
+        {
+          "name": "syft:package:type",
+          "value": "python"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python-numpy:python_numpy:2.1.3:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python_numpy:python-numpy:2.1.3:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python_numpy:python_numpy:2.1.3:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python:python-numpy:2.1.3:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python:python_numpy:2.1.3:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:numpy:python-numpy:2.1.3:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:numpy:python_numpy:2.1.3:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python-numpy:numpy:2.1.3:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python_numpy:numpy:2.1.3:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python:numpy:2.1.3:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:numpy:numpy:2.1.3:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:location:0:path",
+          "value": "/requirements.txt"
+        }
+      ],
+      "purl": "pkg:pypi/numpy@2.1.3",
+      "type": "library",
+      "version": "2.1.3"
+    },
+    {
+      "bom-ref": "pkg:pypi/pip@24.3.1?package-id=5ecfc130c078367f",
+      "cpe": "cpe:2.3:a:python-pip:python-pip:24.3.1:*:*:*:*:*:*:*",
+      "name": "pip",
+      "properties": [
+        {
+          "name": "syft:package:foundBy",
+          "value": "python-index-cataloger"
+        },
+        {
+          "name": "syft:package:language",
+          "value": "python"
+        },
+        {
+          "name": "syft:package:metadataType",
+          "value": "PythonRequirementsMetadata"
+        },
+        {
+          "name": "syft:package:type",
+          "value": "python"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python-pip:python_pip:24.3.1:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python_pip:python-pip:24.3.1:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python_pip:python_pip:24.3.1:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python:python-pip:24.3.1:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python:python_pip:24.3.1:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:pypa:python-pip:24.3.1:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:pypa:python_pip:24.3.1:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:pip:python-pip:24.3.1:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:pip:python_pip:24.3.1:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python-pip:pip:24.3.1:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python_pip:pip:24.3.1:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python:pip:24.3.1:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:pypa:pip:24.3.1:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:pip:pip:24.3.1:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:location:0:path",
+          "value": "/requirements.txt"
+        }
+      ],
+      "purl": "pkg:pypi/pip@24.3.1",
+      "type": "library",
+      "version": "24.3.1"
+    },
+    {
+      "bom-ref": "pkg:pypi/pycparser@2.22?package-id=137c5855cc1fcac1",
+      "cpe": "cpe:2.3:a:python-pycparser:python-pycparser:2.22:*:*:*:*:*:*:*",
+      "name": "pycparser",
+      "properties": [
+        {
+          "name": "syft:package:foundBy",
+          "value": "python-index-cataloger"
+        },
+        {
+          "name": "syft:package:language",
+          "value": "python"
+        },
+        {
+          "name": "syft:package:metadataType",
+          "value": "PythonRequirementsMetadata"
+        },
+        {
+          "name": "syft:package:type",
+          "value": "python"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python-pycparser:python_pycparser:2.22:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python_pycparser:python-pycparser:2.22:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python_pycparser:python_pycparser:2.22:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:pycparser:python-pycparser:2.22:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:pycparser:python_pycparser:2.22:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python-pycparser:pycparser:2.22:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python_pycparser:pycparser:2.22:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python:python-pycparser:2.22:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python:python_pycparser:2.22:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:pycparser:pycparser:2.22:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:python:pycparser:2.22:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:location:0:path",
+          "value": "/requirements.txt"
+        }
+      ],
+      "purl": "pkg:pypi/pycparser@2.22",
+      "type": "library",
+      "version": "2.22"
+    }
+  ],
+  "metadata": {
+    "component": {
+      "bom-ref": "5362833bdc4ccbf1",
+      "name": "requirements.txt",
+      "type": "file",
+      "version": "sha256:sha256:a83b3e8348dd7b040e865717a882172298c4a3c4d8ed37f83ec01c906395b794"
+    },
+    "timestamp": "2024-11-08T09:54:21-06:00",
+    "tools": [
+      {
+        "name": "syft",
+        "vendor": "anchore",
+        "version": "0.85.0"
+      }
+    ]
+  },
+  "serialNumber": "urn:uuid:a9a6332c-44e5-477c-832b-36435e5b0a93",
+  "specVersion": "1.4",
+  "version": 1
+}

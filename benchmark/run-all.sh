@@ -1,16 +1,15 @@
 #!/bin/bash
 set -exo pipefail
 
-SCRIPT_DIR="$(dirname -- "$0";)"
+SCRIPT_DIR="$(realpath "$(dirname -- "$0";)")"
+SBOM_DIR="$SCRIPT_DIR/sboms"
 
-export TARGET_PATH="$SCRIPT_DIR/venv"
-if [[ ! -d "$TARGET_PATH" ]]; then
-  python -m venv "$SCRIPT_DIR/venv"
-fi
-"$SCRIPT_DIR/venv/bin/python" -m pip install -r "$SCRIPT_DIR/requirements.txt"
+# Some SBOM generators support only venvs, some only requirements.txts
+export TARGET_VENV=$(realpath "$SCRIPT_DIR/venv")
+export TARGET_REQS=$(realpath "$SCRIPT_DIR/requirements.txt")
 
-for SBOM_GEN in cdxgen syft trivy; do
-  export SBOM_PATH="$SCRIPT_DIR/sboms/$SBOM_GEN.cdx.json"
+for SBOM_GEN in cdxgen syft-reqs syft-venv trivy; do
+  export SBOM_PATH="$SBOM_DIR/$SBOM_GEN.cdx.json"
 
   # Run the SBOM generator tool
   "$SCRIPT_DIR/run-$SBOM_GEN.sh"
@@ -18,3 +17,6 @@ for SBOM_GEN in cdxgen syft trivy; do
   # Format the JSON consistently across all documents.
   python -m json.tool --indent=2 --sort-keys $SBOM_PATH $SBOM_PATH
 done
+
+# Remove paths which might vary across runs.
+find $SBOM_DIR -type f -print0 | xargs -0 sed -i "s|$SCRIPT_DIR||g"

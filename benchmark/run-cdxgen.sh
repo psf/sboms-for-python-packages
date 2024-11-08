@@ -1,2 +1,3 @@
 set -exo pipefail
-./node_modules/.bin/cdxgen $TARGET_PATH --output $SBOM_PATH
+export VIRTUAL_ENV="$TARGET_VENV"
+./node_modules/.bin/cdxgen --type python --output $SBOM_PATH

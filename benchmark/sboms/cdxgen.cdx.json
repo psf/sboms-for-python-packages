@@ -1,20 +1,178 @@
 {
   "bomFormat": "CycloneDX",
-  "components": [],
-  "dependencies": [],
+  "components": [
+    {
+      "bom-ref": "pkg:pypi/cryptography@43.0.3",
+      "evidence": {
+        "identity": [
+          {
+            "confidence": 1,
+            "field": "purl",
+            "methods": [
+              {
+                "confidence": 1,
+                "technique": "instrumentation",
+                "value": "/venv"
+              }
+            ]
+          }
+        ]
+      },
+      "group": "",
+      "name": "cryptography",
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "/requirements.txt"
+        }
+      ],
+      "purl": "pkg:pypi/cryptography@43.0.3",
+      "type": "library",
+      "version": "43.0.3"
+    },
+    {
+      "bom-ref": "pkg:pypi/cffi@1.17.1",
+      "evidence": {
+        "identity": [
+          {
+            "confidence": 0.8,
+            "field": "purl",
+            "methods": [
+              {
+                "confidence": 0.8,
+                "technique": "manifest-analysis",
+                "value": "/requirements.txt"
+              }
+            ]
+          }
+        ]
+      },
+      "group": "",
+      "name": "cffi",
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "/requirements.txt"
+        }
+      ],
+      "purl": "pkg:pypi/cffi@1.17.1",
+      "type": "library",
+      "version": "1.17.1"
+    },
+    {
+      "bom-ref": "pkg:pypi/pycparser@2.22",
+      "evidence": {
+        "identity": [
+          {
+            "confidence": 0.8,
+            "field": "purl",
+            "methods": [
+              {
+                "confidence": 0.8,
+                "technique": "manifest-analysis",
+                "value": "/requirements.txt"
+              }
+            ]
+          }
+        ]
+      },
+      "group": "",
+      "name": "pycparser",
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "/requirements.txt"
+        }
+      ],
+      "purl": "pkg:pypi/pycparser@2.22",
+      "type": "library",
+      "version": "2.22"
+    },
+    {
+      "bom-ref": "pkg:pypi/numpy@2.1.3",
+      "evidence": {
+        "identity": [
+          {
+            "confidence": 1,
+            "field": "purl",
+            "methods": [
+              {
+                "confidence": 1,
+                "technique": "instrumentation",
+                "value": "/venv"
+              }
+            ]
+          }
+        ]
+      },
+      "group": "",
+      "name": "numpy",
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "/requirements.txt"
+        }
+      ],
+      "purl": "pkg:pypi/numpy@2.1.3",
+      "type": "framework",
+      "version": "2.1.3"
+    }
+  ],
+  "dependencies": [
+    {
+      "dependsOn": [
+        "pkg:pypi/cryptography@43.0.3",
+        "pkg:pypi/numpy@2.1.3"
+      ],
+      "ref": "pkg:pypi/benchmark@latest"
+    },
+    {
+      "dependsOn": [
+        "pkg:pypi/pycparser@2.22"
+      ],
+      "ref": "pkg:pypi/cffi@1.17.1"
+    },
+    {
+      "dependsOn": [],
+      "ref": "pkg:pypi/pycparser@2.22"
+    },
+    {
+      "dependsOn": [
+        "pkg:pypi/cffi@1.17.1"
+      ],
+      "ref": "pkg:pypi/cryptography@43.0.3"
+    },
+    {
+      "dependsOn": [],
+      "ref": "pkg:pypi/numpy@2.1.3"
+    }
+  ],
   "metadata": {
     "authors": [
       {
         "name": "OWASP Foundation"
       }
     ],
+    "component": {
+      "bom-ref": "pkg:pypi/benchmark@latest",
+      "group": "",
+      "name": "benchmark",
+      "purl": "pkg:pypi/benchmark@latest",
+      "type": "application",
+      "version": "latest"
+    },
     "lifecycles": [
       {
         "phase": "build"
       }
     ],
-    "properties": [],
-    "timestamp": "2024-11-05T20:29:07Z",
+    "properties": [
+      {
+        "name": "cdx:bom:componentTypes",
+        "value": "pypi"
+      }
+    ],
+    "timestamp": "2024-11-08T15:54:20Z",
     "tools": {
       "components": [
         {
@@ -34,8 +192,7 @@
       ]
     }
   },
-  "serialNumber": "urn:uuid:feedfa6f-d631-4e3f-9c48-e663b3d862b3",
-  "services": [],
+  "serialNumber": "urn:uuid:82848e34-452f-4e84-90c2-4fd67b262375",
   "specVersion": "1.6",
   "version": 1
 }

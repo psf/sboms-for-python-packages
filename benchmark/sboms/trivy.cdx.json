@@ -1,17 +1,170 @@
 {
   "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
   "bomFormat": "CycloneDX",
-  "components": [],
+  "components": [
+    {
+      "bom-ref": "6ee0b63a-edf0-40a5-9897-0b718439b899",
+      "name": "requirements.txt",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:Class",
+          "value": "lang-pkgs"
+        },
+        {
+          "name": "aquasecurity:trivy:Type",
+          "value": "pip"
+        }
+      ],
+      "type": "application"
+    },
+    {
+      "bom-ref": "pkg:pypi/cffi@1.17.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT License"
+          }
+        }
+      ],
+      "name": "cffi",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pip"
+        }
+      ],
+      "purl": "pkg:pypi/cffi@1.17.1",
+      "type": "library",
+      "version": "1.17.1"
+    },
+    {
+      "bom-ref": "pkg:pypi/cryptography@43.0.3",
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache Software License"
+          }
+        },
+        {
+          "license": {
+            "name": "BSD License"
+          }
+        }
+      ],
+      "name": "cryptography",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pip"
+        }
+      ],
+      "purl": "pkg:pypi/cryptography@43.0.3",
+      "type": "library",
+      "version": "43.0.3"
+    },
+    {
+      "bom-ref": "pkg:pypi/numpy@2.1.3",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD License"
+          }
+        }
+      ],
+      "name": "numpy",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pip"
+        }
+      ],
+      "purl": "pkg:pypi/numpy@2.1.3",
+      "type": "library",
+      "version": "2.1.3"
+    },
+    {
+      "bom-ref": "pkg:pypi/pip@24.3.1",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT License"
+          }
+        }
+      ],
+      "name": "pip",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pip"
+        }
+      ],
+      "purl": "pkg:pypi/pip@24.3.1",
+      "type": "library",
+      "version": "24.3.1"
+    },
+    {
+      "bom-ref": "pkg:pypi/pycparser@2.22",
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD License"
+          }
+        }
+      ],
+      "name": "pycparser",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pip"
+        }
+      ],
+      "purl": "pkg:pypi/pycparser@2.22",
+      "type": "library",
+      "version": "2.22"
+    }
+  ],
   "dependencies": [
     {
+      "dependsOn": [
+        "pkg:pypi/cffi@1.17.1",
+        "pkg:pypi/cryptography@43.0.3",
+        "pkg:pypi/numpy@2.1.3",
+        "pkg:pypi/pip@24.3.1",
+        "pkg:pypi/pycparser@2.22"
+      ],
+      "ref": "6ee0b63a-edf0-40a5-9897-0b718439b899"
+    },
+    {
+      "dependsOn": [
+        "6ee0b63a-edf0-40a5-9897-0b718439b899"
+      ],
+      "ref": "dd83e8ef-d0f0-46c4-a4b1-151e5df7f687"
+    },
+    {
       "dependsOn": [],
-      "ref": "ce71219f-6492-4313-8b35-3fb5215e5609"
+      "ref": "pkg:pypi/cffi@1.17.1"
+    },
+    {
+      "dependsOn": [],
+      "ref": "pkg:pypi/cryptography@43.0.3"
+    },
+    {
+      "dependsOn": [],
+      "ref": "pkg:pypi/numpy@2.1.3"
+    },
+    {
+      "dependsOn": [],
+      "ref": "pkg:pypi/pip@24.3.1"
+    },
+    {
+      "dependsOn": [],
+      "ref": "pkg:pypi/pycparser@2.22"
     }
   ],
   "metadata": {
     "component": {
-      "bom-ref": "ce71219f-6492-4313-8b35-3fb5215e5609",
-      "name": "venv",
+      "bom-ref": "dd83e8ef-d0f0-46c4-a4b1-151e5df7f687",
+      "name": "/requirements.txt",
       "properties": [
         {
           "name": "aquasecurity:trivy:SchemaVersion",
@@ -20,7 +173,7 @@
       ],
       "type": "application"
     },
-    "timestamp": "2024-11-05T20:29:08+00:00",
+    "timestamp": "2024-11-08T15:54:22+00:00",
     "tools": {
       "components": [
         {
@@ -32,7 +185,7 @@
       ]
     }
   },
-  "serialNumber": "urn:uuid:726ec59a-dbe9-4515-bd0d-91f984ef6cfb",
+  "serialNumber": "urn:uuid:b39ab79a-79ee-4734-ba44-1995396e7a89",
   "specVersion": "1.6",
   "version": 1,
   "vulnerabilities": []

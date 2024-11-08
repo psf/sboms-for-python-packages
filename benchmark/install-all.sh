@@ -18,3 +18,8 @@ wget "https://github.com/aquasecurity/trivy/releases/download/v${TRIVY_VERSION}/
 tar -xzvf "trivy_${TRIVY_VERSION}_Linux-64bit.tar.gz" trivy
 rm "trivy_${TRIVY_VERSION}_Linux-64bit.tar.gz"
 chmod a+x ./trivy
+
+if [[ ! -d "venv" ]]; then
+  python -m venv venv
+  ./venv/bin/python -m pip install -r requirements.txt
+fi

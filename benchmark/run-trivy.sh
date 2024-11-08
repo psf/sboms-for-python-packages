@@ -1,2 +1,2 @@
 set -exo pipefail
-./trivy fs --format cyclonedx --output $SBOM_PATH $TARGET_PATH
+./trivy fs --format cyclonedx --output $SBOM_PATH $TARGET_REQS
