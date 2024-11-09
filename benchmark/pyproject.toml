@@ -1,0 +1,8 @@
+[project]
+name = "benchmark-project"
+version = "1.0.0"
+dependencies = [
+  "cryptography",
+  "numpy",
+  "pip",
+]

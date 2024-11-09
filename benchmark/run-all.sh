@@ -7,8 +7,9 @@ SBOM_DIR="$SCRIPT_DIR/sboms"
 # Some SBOM generators support only venvs, some only requirements.txts
 export TARGET_VENV=$(realpath "$SCRIPT_DIR/venv")
 export TARGET_REQS=$(realpath "$SCRIPT_DIR/requirements.txt")
+export TARGET_PYPROJECT=$(realpath "$SCRIPT_DIR/pyproject.toml")
 
-for SBOM_GEN in cdxgen syft-reqs syft-venv trivy; do
+for SBOM_GEN in cdxgen cyclonedx-bom-reqs cyclonedx-bom-venv syft-reqs syft-venv trivy; do
   export SBOM_PATH="$SBOM_DIR/$SBOM_GEN.cdx.json"
 
   # Run the SBOM generator tool
