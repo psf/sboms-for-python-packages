@@ -3,6 +3,7 @@
 set -exo pipefail
 
 CDXGEN_VERSION="10.11.0"
+CYCLONEDXBOM_VERSION="5.1.1"
 SYFT_VERSION="1.16.0"
 TRIVY_VERSION="0.57.0"
 
@@ -18,6 +19,8 @@ wget "https://github.com/aquasecurity/trivy/releases/download/v${TRIVY_VERSION}/
 tar -xzvf "trivy_${TRIVY_VERSION}_Linux-64bit.tar.gz" trivy
 rm "trivy_${TRIVY_VERSION}_Linux-64bit.tar.gz"
 chmod a+x ./trivy
+
+pip install "cyclonedx-bom==${CYCLONEDXBOM_VERSION}"
 
 if [[ ! -d "venv" ]]; then
   python -m venv venv
