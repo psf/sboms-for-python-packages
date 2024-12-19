@@ -160,6 +160,8 @@ for Python packages.
 
 ## How does it all fit together?
 
+There's a [published blog post with diagrams](https://sethmlarson.dev/visualizing-the-python-package-sbom-data-flow#end-to-end-sbom-data-flow) on the end-to-end data flow.
+
 * If project dependencies are checked into version control then an SBOM file
   can be created and checked into version control alongside those dependencies.
   This SBOM file is referenced within `pyproject.toml` under `project.sbom-files`.
