@@ -1,0 +1,83 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.4.schema.json",
+  "version": 1,
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.4",
+  "metadata": {
+    "component": {
+      "bom-ref": "pkg:pypi/scipy@1.16.0",
+      "name": "scipy",
+      "version": "1.16.0",
+      "purl": "pkg:pypi/scipy@1.16.0",
+      "type": "library",
+      "components": [
+        {
+          "name": "libquadmath-1c3f8ec.so.0.0.0",
+          "version": "12.3.0-1ubuntu1~22.04",
+          "type": "library",
+          "purl": "pkg:deb/ubuntu/libquadmath0@12.3.0-1ubuntu1~22.04",
+          "components": [
+            {
+              "name": "scipy.libs/libquadmath-1c3f8ec.so.0.0.0",
+              "type": "file"
+            }
+          ],
+          "pedigree": {
+            "ancestors": [
+              {
+                "name": "libquadmath",
+                "version": "12.3.0-1ubuntu1~22.04",
+                "type": "library",
+                "purl": "pkg:deb/ubuntu/libquadmath0@12.3.0-1ubuntu1~22.04"
+              }
+            ]
+          }
+        },
+        {
+          "name": "libgfortran-df5d6f8d.so.5.0.0",
+          "version": "12.3.0-1ubuntu1~22.04",
+          "type": "library",
+          "purl": "pkg:deb/ubuntu/libgfortran5@12.3.0-1ubuntu1~22.04",
+          "components": [
+            {
+              "name": "scipy.libs/libgfortran-df5d6f8d.so.5.0.0",
+              "type": "file"
+            }
+          ],
+          "pedigree": {
+            "ancestors": [
+              {
+                "name": "libgfortran",
+                "version": "12.3.0-1ubuntu1~22.04",
+                "type": "library",
+                "purl": "pkg:deb/ubuntu/libgfortran5@12.3.0-1ubuntu1~22.04"
+              }
+            ]
+          }
+        },
+        {
+          "name": "libopenblasp-r0-1dedc9fe.3.20.so",
+          "version": "0.3.20",
+          "type": "library",
+          "purl": "pkg:deb/ubuntu/libopenblas0-pthread@0.3.20%2Bds-1",
+          "components": [
+            {
+              "name": "scipy.libs/libopenblasp-r0-1dedc9fe.3.20.so",
+              "type": "file"
+            }
+          ],
+          "pedigree": {
+            "ancestors": [
+              {
+                "name": "libopenblas0-pthread",
+                "version": "0.3.20+ds-1",
+                "type": "library",
+                "purl": "pkg:deb/ubuntu/libopenblas0-pthread@0.3.20%2Bds-1"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.4.schema.json",
+  "version": 1,
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.4",
+  "metadata": {
+    "component": {
+      "bom-ref": "pkg:pypi/scipy@1.16.0",
+      "name": "scipy",
+      "purl": "pkg:pypi/scipy@1.16.0",
+      "type": "library",
+      "components": [
+        {
+          "bom-ref": "https://github.com/stevengj/nlopt",
+          "name": "DIRECT",
+          "version": "2.10.0",
+          "type": "library"
+        },
+        {
+          "bom-ref": "https://github.com/opencollab/arpack-ng",
+          "name": "ARPACK",
+          "version": "3.9.1",
+          "type": "library"
+        },
+        {
+          "bom-ref": "https://github.com/xiaoyeli/superlu",
+          "name": "SuperLU",
+          "version": "7.0.0",
+          "type": "library"
+        },
+        {
+          "bom-ref": "https://github.com/qhull/qhull",
+          "name": "QHull",
+          "version": "8.1",
+          "type": "library"
+        },
+        {
+          "bom-ref": "https://github.com/felixlen/trlib",
+          "name": "trlib",
+          "version": "0.4",
+          "type": "library"
+        },
+        {
+          "bom-ref": "https://statmath.wuac.at/unuran",
+          "name": "UNU.RAN",
+          "version": "1.11.0",
+          "type": "library"
+        }
+      ]
+    }
+  }
+}
